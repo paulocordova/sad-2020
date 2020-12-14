@@ -1,10 +1,14 @@
 <?php
 namespace dimensoes;
 mysqli_report(MYSQLI_REPORT_STRICT);
-require_once('Cliente.php');
+
+$separador = DIRECTORY_SEPARATOR;
+$root = $_SERVER['DOCUMENT_ROOT'];
+
+require_once($root.'/etl-2020/models/Cliente.php');
 require_once('Sumario.php');
 use dimensoes\Sumario;
-use dimensoes\Cliente;
+use models\Cliente;
 class DimCliente{
    public function carregarDimCliente(){
       $dataAtual = date('Y-m-d');

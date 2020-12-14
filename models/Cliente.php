@@ -1,5 +1,5 @@
 <?php
-namespace dimensoes;
+namespace models;
 
 /**
  * Model da entidade cliente
