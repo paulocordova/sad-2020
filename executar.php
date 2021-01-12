@@ -2,12 +2,14 @@
    require_once('dim/DimCliente.php');
    require_once('dim/DimData.php');
    require_once('dim/DimProduto.php');
+   require_once('fato/CarregaFatosVenda.php');
    require_once('dim/Sumario.php');
 
    use dimensoes\Sumario;
    use dimensoes\DimData;
    use dimensoes\DimProduto;
    use dimensoes\DimCliente;
+   use fato\CarregaFatosVenda;
 
    $dimCliente = new DimCliente();
    $sumCliente = $dimCliente->carregarDimCliente();
@@ -30,5 +32,10 @@
    echo "Alterações: ".$sumProduto->quantidadeAlteracoes."<br>";
    echo "<br>==============================================<br>";
 
+   $fatosVenda = new CarregaFatosVenda();
+   $sumFatos = $fatosVenda->carregarFatos('2017-01-01');
+   echo "Fatos: <br>";
+   echo "Inclusões: ".$sumFatos->quantidadeInclusoes."<br>";
+   echo "<br>==============================================<br>";
 
 ?>
